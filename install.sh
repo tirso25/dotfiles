@@ -51,6 +51,7 @@ source $HOME/.nvm/nvm.sh
 nvm install --lts
 npm install -g svgo wipeclean ttf2woff
 
+
 # Rust install
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 

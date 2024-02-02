@@ -34,7 +34,7 @@ PATH=$HOME/bin:/usr/local/bin:$HOME/.nvm:/usr/local/go/bin:$HOME/.deno/bin:$HOME
 # Go install
 wget --quiet https://go.dev/dl/go1.18.1.linux-amd64.tar.gz
 tar -xvf go1.18.1.linux-amd64.tar.gz
-sudo mv go /usr/share
+sudo mv go /usr/local
 rm go1.18.1.linux-amd64.tar.gz
 
 # Go installations

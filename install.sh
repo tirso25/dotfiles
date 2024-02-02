@@ -25,7 +25,7 @@ sudo apt-get install -y \
 sudo ln -s /usr/bin/batcat /usr/local/bin/bat
 
 # Oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 echo source $HOME/.dotfiles/.zshrc >> ~/.zshrc
 
 PNPM_HOME=$HOME/.local/share/pnpm

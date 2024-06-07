@@ -26,7 +26,7 @@ sudo ln -s /usr/bin/batcat /usr/local/bin/bat
 
 # Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-echo source $HOME/.dotfiles/.zshrc >> ~/.zshrc
+echo "source $HOME/.dotfiles/.zshrc" >> ~/.zshrc
 
 PNPM_HOME=$HOME/.local/share/pnpm
 PATH=$HOME/bin:/usr/local/bin:$HOME/.nvm:/usr/local/go/bin:$HOME/.deno/bin:$HOME/.cargo/bin:/usr/share/go/bin:$PNPM_HOME:$PATH
@@ -50,7 +50,6 @@ curl -o- https://raw.githubusercontent.com/pnpm/self-installer/master/install.js
 source $HOME/.nvm/nvm.sh
 nvm install --lts
 npm install -g svgo wipeclean ttf2woff
-
 
 # Rust install
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -87,6 +86,7 @@ cd ..
 rm -rf woff2
 
 # Change to ZSH
-sudo chsh -s /usr/bin/zsh
+chsh -s $(which zsh) $USER
 
+# Reload zsh configuration
 zsh

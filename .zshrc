@@ -1,4 +1,4 @@
-ZSH_THEME="sexy"
+ZSH_THEME="robbyrussell"
 plugins=(git colored-man-pages)
 
 # Reload theme

@@ -1,4 +1,4 @@
-# ManzDev dotfiles
+# TIRSO dotfiles
 
 Script to prepare your GNU/Linux terminal (WSL also) in a «superterminal» with modern, autocompleted commands and other features.
 

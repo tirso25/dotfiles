@@ -48,6 +48,8 @@ If you haven't a non-root user with sudo privileges, create it before run this s
 ```bash
 sudo usermod -aG sudo usuario
 sudo apt-get install git
+sudo apt-get install chrome-gnome-shell gnome-shell-extensions
+sudo apt-get install gnome-tweaks
 sudo apt-get update -y && sudo apt-get upgrade
 ```
 

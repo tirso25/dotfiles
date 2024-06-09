@@ -34,7 +34,7 @@ Script to prepare your GNU/Linux terminal (WSL also) in a «superterminal» with
 ## Installation
 
 ```bash
-git clone https://github.com/manzdev/dotfiles ~/.dotfiles
+git clone https://github.com/tirso25/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 bash install.sh
 ```
@@ -49,11 +49,4 @@ If you haven't a non-root user with sudo privileges, create it before run this s
 usermod -aG sudo usuario
 apt-get update -y && apt-get install -y sudo git
 ```
-
-## More info
-
-![Modern commands](https://pbs.twimg.com/media/FQZHmm5aIAkTXEw?format=jpg&name=small)
-
-- 1: https://twitter.com/Manz/status/1514983676739739658
-- 2: https://twitter.com/Manz/status/1516430573451059214
 

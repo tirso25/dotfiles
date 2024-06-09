@@ -37,6 +37,7 @@ Script to prepare your GNU/Linux terminal (WSL also) in a «superterminal» with
 git clone https://github.com/tirso25/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 bash install.sh
+bash install2.sh
 ```
 
 * Note: Do not run as root/sudo this file!

@@ -31,17 +31,6 @@ Script to prepare your GNU/Linux terminal (WSL also) in a «superterminal» with
 | zellij (tmux) |
 | hyperfine (time) |
 
-## Installation
-
-```bash
-git clone https://github.com/tirso25/dotfiles ~/.dotfiles
-cd ~/.dotfiles
-bash install.sh
-bash install2.sh
-```
-
-* Note: Do not run as root/sudo this file!
-
 ## Requisites
 
 If you haven't a non-root user with sudo privileges, create it before run this script:
@@ -52,3 +41,13 @@ sudo apt-get install git chrome-gnome-shell gnome-shell-extensions gnome-tweaks
 sudo apt-get update -y && sudo apt-get upgrade
 ```
 
+## Installation
+
+```bash
+git clone https://github.com/tirso25/dotfiles ~/.dotfiles
+cd ~/.dotfiles
+bash install.sh
+bash install2.sh
+```
+
+* Note: Do not run as root/sudo this file!

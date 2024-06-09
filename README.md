@@ -47,6 +47,7 @@ If you haven't a non-root user with sudo privileges, create it before run this s
 
 ```bash
 sudo usermod -aG sudo usuario
-sudo apt-get update -y && apt-get install -y sudo git
+sudo apt-get install git
+sudo apt-get update -y && sudo apt-get upgrade
 ```
 

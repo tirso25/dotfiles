@@ -46,7 +46,7 @@ bash install.sh
 If you haven't a non-root user with sudo privileges, create it before run this script:
 
 ```bash
-usermod -aG sudo usuario
+sudo usermod -aG sudo usuario
 apt-get update -y && apt-get install -y sudo git
 ```
 

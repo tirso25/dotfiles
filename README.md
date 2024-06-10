@@ -48,6 +48,7 @@ git clone https://github.com/tirso25/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 bash install.sh
 bash fondo.sh
+bash temas.sh
 ```
 
 * Note: Do not run as root/sudo this file!

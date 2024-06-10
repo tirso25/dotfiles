@@ -47,7 +47,7 @@ sudo apt-get update -y && sudo apt-get upgrade
 git clone https://github.com/tirso25/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 bash install.sh
-bash install2.sh
+bash fondo.sh
 ```
 
 * Note: Do not run as root/sudo this file!

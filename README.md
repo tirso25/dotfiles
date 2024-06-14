@@ -49,6 +49,7 @@ cd ~/.dotfiles
 bash install.sh
 bash fondo.sh
 bash temas.sh
+bash programas.sh
 ```
 
 * Note: Do not run as root/sudo this file!

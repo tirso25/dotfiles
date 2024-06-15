@@ -36,7 +36,7 @@ Script to prepare your GNU/Linux terminal (WSL also) in a «superterminal» with
 If you haven't a non-root user with sudo privileges, create it before run this script:
 
 ```bash
-usermod -aG sudo usuario
+sudo usermod -aG sudo usuario
 sudo apt-get install git chrome-gnome-shell gnome-shell-extensions gnome-tweaks
 sudo apt-get update -y && sudo apt-get upgrade
 reboot

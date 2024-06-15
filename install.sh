@@ -87,6 +87,7 @@ rm -rf woff2
 
 # Change to ZSH
 chsh -s $(which zsh) $USER
-
+source ~/.zshrc
+reboot
 # Reload zsh configuration
 zsh

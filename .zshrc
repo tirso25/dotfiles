@@ -30,7 +30,7 @@ export PNPM_HOME=$HOME/.local/share/pnpm
 
 # zoxide
 eval "$(zoxide init zsh)"
-rm ~/.zcompdump*; compinit
+rm -f ~/.zcompdump*; compinit
 
 # PATH
 export PATH=$HOME/bin:/usr/games:/usr/local/bin:$HOME/.nvm:/usr/local/go/bin:$DENO_INSTALL/bin:$HOME/.cargo/bin:$GOPATH/bin:$PNPM_HOME:$PATH

@@ -37,7 +37,7 @@ If you haven't a non-root user with sudo privileges, create it before run this s
 
 ```bash
 sudo usermod -aG sudo usuario
-sudo apt-get install git chrome-gnome-shell gnome-shell-extensions gnome-tweaks gnome-software
+sudo apt-get install git chrome-gnome-shell gnome-shell-extensions gnome-tweaks gnome-software gnome-shell-extension-manager
 sudo apt-get update -y && sudo apt-get upgrade
 reboot / shutdown -h now
 ```

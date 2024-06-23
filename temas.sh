@@ -5,7 +5,8 @@ URL_FONT="https://github.com/tirso25/dotfiles/raw/main/FiraCode-VariableFont_wgh
 URL_THEME="https://github.com/tirso25/dotfiles/raw/main/Nordic-darker.tar.xz"
 URL_ICONS="https://github.com/tirso25/dotfiles/raw/main/Tela-black.tar.xz"
 URL_DRACULA_ICONS="https://github.com/tirso25/dotfiles/raw/main/dracula-icons-main.zip"
-URL_CURSORS="https://github.com/tirso25/dotfiles/raw/main/material_light_cursors.zip"
+URL_GRAPHITE_CUR="https://github.com/tirso25/dotfiles/raw/main/Graphite-dark-nord-cursors.tar.xz"
+URL_VIMIX_CUR="https://github.com/tirso25/dotfiles/raw/main/Vimix-cursors.tar.xz"
 
 # Directorios destino
 DOWNLOAD_DIR="$HOME/Descargas"
@@ -18,7 +19,8 @@ FONT_FILE="FiraCode-VariableFont_wght.ttf"
 FILE_NAME_THEME="Nordic-darker.tar.xz"
 FILE_NAME_ICONS="Tela-black.tar.xz"
 FILE_NAME_DRACULA_ICONS="dracula-icons-main.zip"
-FILE_NAME_CURSORS="material_light_cursors.zip"
+FILE_NAME_GRAPHITE_CUR="Graphite-dark-nord-cursors.tar.xz"
+FILE_NAME_VIMIX_CUR="Vimix-cursors.tar.xz"
 
 # Función para descargar y mover fuentes
 download_and_move_font() {
@@ -91,26 +93,6 @@ download_and_extract() {
     rm $file_name
 }
 
-# Función para descomprimir cursores
-extract_cursors() {
-    local repo_url="https://github.com/tirso25/dotfiles.git"
-    local cursors_file="material_light_cursors.zip"
-
-    # Clonar el repositorio para obtener el archivo
-    git clone --depth 1 $repo_url /tmp/dotfiles >/dev/null 2>&1
-
-    # Descomprimir el archivo de cursores
-    echo "Descomprimiendo cursores en $DEST_DIR_ICONS..."
-    sudo unzip -q "/tmp/dotfiles/$cursors_file" -d $DEST_DIR_ICONS
-
-    if [ $? -ne 0 ]; then
-        echo "Error: No se pudo descomprimir el archivo $cursors_file."
-        exit 1
-    fi
-
-    rm -rf /tmp/dotfiles
-}
-
 # Descargar y mover la fuente
 download_and_move_font $URL_FONT $DOWNLOAD_DIR $FONT_DIR $FONT_FILE
 
@@ -123,7 +105,10 @@ download_and_extract $URL_ICONS $DEST_DIR_ICONS $FILE_NAME_ICONS
 # Descargar y descomprimir los iconos Dracula
 download_and_extract $URL_DRACULA_ICONS $DEST_DIR_ICONS $FILE_NAME_DRACULA_ICONS
 
-# Descomprimir los cursores
-extract_cursors
+# Descargar y descomprimir los cursores Graphite dark nord
+download_and_extract $URL_GRAPHITE_CUR $DEST_DIR_ICONS $FILE_NAME_GRAPHITE_CUR
+
+# Descargar y descomprimir los cursores Vimix
+download_and_extract $URL_VIMIX_CUR $DEST_DIR_ICONS $FILE_NAME_VIMIX_CUR
 
 echo "Instalación completada."

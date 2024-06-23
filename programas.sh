@@ -40,6 +40,9 @@ rm $ECLIPSE_FILE
 
 # Instalar SQL, Tmux, y herramientas relacionadas
 sudo apt-get install -y tmux tty-clock sqlite3 sqlitebrowser
+sudo add-apt-repository ppa:hluk/copyq
+sudo apt update
+sudo apt install copyq
 
 # Instalar Visual Studio Code
 sudo apt install -y software-properties-common apt-transport-https
@@ -61,3 +64,5 @@ source ~/.bashrc
 javac --version
 
 echo "Instalación completada. Puedes iniciar NetBeans escribiendo 'netbeans' y Eclipse escribiendo 'eclipse' en la terminal."
+
+

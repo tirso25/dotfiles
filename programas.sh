@@ -60,6 +60,10 @@ sudo dpkg -i $JDK
 echo "export PATH=\$PATH:/usr/lib/jvm/jdk-21-oracle-x64/bin" >> ~/.bashrc
 source ~/.bashrc
 
+#Instalar  TeamViwer
+cd Descargas
+wget https://download.teamviewer.com/download/linux/teamviewer-host_amd64.deb
+sudo apt-get install ./teamviewer-host_amd64.deb
 # Verificar la instalación de Java
 javac --version
 

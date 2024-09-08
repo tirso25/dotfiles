@@ -64,6 +64,7 @@ source ~/.bashrc
 cd Descargas
 wget https://download.teamviewer.com/download/linux/teamviewer-host_amd64.deb
 sudo apt-get install ./teamviewer-host_amd64.deb
+
 # Verificar la instalación de Java
 javac --version
 

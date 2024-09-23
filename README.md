@@ -48,9 +48,9 @@ reboot / shutdown -h now
 git clone https://github.com/tirso25/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 bash install.sh
+bash programas.sh
 bash fondo.sh
 bash temas.sh
-bash programas.sh
 ```
 
 * Note: Do not run as root/sudo this file!

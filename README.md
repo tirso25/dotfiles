@@ -40,6 +40,7 @@ sudo apt install build-essential dkms linux-headers-$(uname -r)
 MONTAR EL CD DE LAS  Guest Additions
 cd /media/$USER/VBox_GAs_*   # Cambia * por la versión montada, puede variar
 sudo ./VBoxLinuxAdditions.run
+```
 
 ## Requisites
 

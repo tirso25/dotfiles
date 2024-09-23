@@ -31,6 +31,16 @@ Script to prepare your GNU/Linux terminal (WSL also) in a «superterminal» with
 | zellij (tmux) |
 | hyperfine (time) |
 
+## Guest Additions
+
+If you are mounting it in a Virtual Box virtual machine you will need the Guest Additions
+```terminal
+sudo apt-get update -y && sudo apt-get upgrade
+sudo apt install build-essential dkms linux-headers-$(uname -r)
+MONTAR EL CD DE LAS  Guest Additions
+cd /media/$USER/VBox_GAs_*   # Cambia * por la versión montada, puede variar
+sudo ./VBoxLinuxAdditions.run
+
 ## Requisites
 
 If you haven't a non-root user with sudo privileges, create it before run this script:

@@ -4,39 +4,59 @@
 sudo apt update
 sudo apt install wget -y
 
-# Descargar y configurar Apache NetBeans
-NETBEANS_VERSION="17"
-wget https://downloads.apache.org/netbeans/netbeans/$NETBEANS_VERSION/Apache-NetBeans-$NETBEANS_VERSION-bin-linux-x64.sh
-chmod +x Apache-NetBeans-$NETBEANS_VERSION-bin-linux-x64.sh
-./Apache-NetBeans-$NETBEANS_VERSION-bin-linux-x64.sh
+# Script de instalación de VirtualBox y XAMPP en Ubuntu 22.04.5
 
-# Descargar y configurar Eclipse
-ECLIPSE_VERSION="2023-06"
-ECLIPSE_FILE="eclipse-jee-$ECLIPSE_VERSION-R-linux-gtk-x86_64.tar.gz"
-wget https://ftp.osuosl.org/pub/eclipse/technology/epp/downloads/release/$ECLIPSE_VERSION/R/$ECLIPSE_FILE
-tar -xvzf $ECLIPSE_FILE
-sudo mv eclipse /opt/
+# Función para manejar errores
+handle_error() {
+    echo "Error: $1"
+    exit 1
+}
 
-# Crear enlace simbólico para Eclipse
-sudo ln -s /opt/eclipse/eclipse /usr/local/bin/eclipse
+# Verificar que se ejecuta con sudo
+if [ "$EUID" -ne 0 ]; then
+    echo "Por favor, ejecuta el script con sudo"
+    exit 1
+fi
 
-# Crear acceso directo para Eclipse
-sudo bash -c 'cat > /usr/share/applications/eclipse.desktop <<EOL
-[Desktop Entry]
-Name=Eclipse IDE
-Type=Application
-Exec=/opt/eclipse/eclipse
-Terminal=false
-Icon=/opt/eclipse/icon.xpm
-Comment=Integrated Development Environment
-NoDisplay=false
-Categories=Development;IDE;
-Name[en]=Eclipse
-EOL'
+# Actualizar repositorios
+echo "Actualizando repositorios..."
+apt update || handle_error "No se pudieron actualizar los repositorios"
 
-# Limpieza de archivos descargados
-rm Apache-NetBeans-$NETBEANS_VERSION-bin-linux-x64.sh
-rm $ECLIPSE_FILE
+# Instalar dependencias
+echo "Instalando dependencias..."
+apt install -y wget gpg || handle_error "No se pudieron instalar las dependencias"
+
+# Importar clave GPG de VirtualBox
+echo "Configurando repositorio de VirtualBox..."
+wget -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | gpg --dearmor -o /usr/share/keyrings/virtualbox.gpg || handle_error "No se pudo importar la clave GPG de VirtualBox"
+
+# Añadir repositorio de VirtualBox
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/virtualbox.gpg] https://download.virtualbox.org/virtualbox/debian jammy contrib" | tee /etc/apt/sources.list.d/virtualbox.list || handle_error "No se pudo añadir el repositorio de VirtualBox"
+
+# Actualizar repositorios de nuevo
+apt update || handle_error "No se pudieron actualizar los repositorios después de añadir VirtualBox"
+
+# Instalar VirtualBox
+echo "Instalando VirtualBox..."
+apt install -y virtualbox-6.1 || handle_error "No se pudo instalar VirtualBox"
+
+# Descargar XAMPP
+echo "Descargando XAMPP..."
+wget https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/8.2.12/xampp-linux-x64-8.2.12-0-installer.run -O xampp-installer.run || handle_error "No se pudo descargar XAMPP"
+
+# Hacer ejecutable el instalador de XAMPP
+chmod +x xampp-installer.run || handle_error "No se pudo hacer ejecutable el instalador de XAMPP"
+
+# Lanzar instalador de XAMPP (requiere interacción manual)
+echo "Lanzando instalador de XAMPP. Sigue las instrucciones en pantalla."
+./xampp-installer.run
+
+# Limpiar archivos de instalación
+rm xampp-installer.run
+
+echo "Instalación completada. VirtualBox y XAMPP han sido instalados."
+echo "Para iniciar XAMPP: sudo /opt/lampp/lampp start"
+echo "Para detener XAMPP: sudo /opt/lampp/lampp stop"
 
 # Instalar SQL, Tmux, y herramientas relacionadas
 sudo apt-get install -y tmux tty-clock sqlite3 sqlitebrowser
